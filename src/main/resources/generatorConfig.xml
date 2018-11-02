@@ -20,9 +20,9 @@
         <!--数据库连接的信息：驱动类、连接地址、表名 、用户名、密码 -->
         <jdbcConnection
                 driverClass="com.mysql.jdbc.Driver"
-                connectionURL="jdbc:mysql://localhost:3306/crm"
+                connectionURL="jdbc:mysql://localhost:3306/test"
                 userId="root"
-                password="123">
+                password="root">
         </jdbcConnection>
 
         <!-- 默认false,会根据数据精度来判断转换为Java什么类型。推荐
@@ -36,9 +36,9 @@
                 targetPackage:生成实体类所在包
                 targetProject:生成POJO类的位置
          -->
-        <javaModelGenerator targetPackage="cn.mybatis.pojo" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.lfxf.licq" targetProject="src/main/java">
             <!-- 是否根据表schema生成子包 -->
-            <property name="enableSubPackages" value="false" />
+            <property name="enableSubPackages" value="true" />
             <!-- 是否清理 从数据库返回的值前后的空格 -->
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
@@ -54,7 +54,7 @@
         <!-- javaClientGenerator：有关Mapper接口的配置，属性跟上面的javaModelGenerator类似
                 type="XMLMAPPER"：设置以XML格式生成映射而非注解
          -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="cn.mybatis.mapper"
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.lfxf.licq"
                              targetProject="src/main/java">
             <property name="enableSubPackages" value="false" />
         </javaClientGenerator>
@@ -64,7 +64,7 @@
             tableName：表的名称
             domainObjectName：指定表对应生成实体类的名称
         -->
-        <table tableName="sys_user" domainObjectName="User">
+        <table tableName="userinfo" domainObjectName="User">
             <!-- 设置自增ID的回显功能 -->
             <generatedKey column="id" sqlStatement="Mysql"/>
         </table>

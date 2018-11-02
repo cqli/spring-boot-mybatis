@@ -1,4 +1,4 @@
-package com.lfxf.licq.mybatisdemo;
+package com.lfxf.licq;
 
 import org.apache.ibatis.io.Resources;
 import org.mybatis.generator.api.MyBatisGenerator;
